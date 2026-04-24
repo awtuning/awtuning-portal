@@ -13,6 +13,22 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const handleForgotPassword = async () => {
+	  if (!email) {
+		setMessage("Enter your email first");
+		return;
+	  }
+
+	  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+		redirectTo: "https://portal.awtuning.co.uk/reset-password",
+	  });
+
+	  if (error) {
+		setMessage(error.message);
+	  } else {
+		setMessage("Password reset email sent");
+	  }
+	};
 
   useEffect(() => {
     const checkSession = async () => {
@@ -116,6 +132,13 @@ export default function Home() {
           >
             {loading ? "Please wait..." : "Log In"}
           </button>
+		  
+		  <button
+			  onClick={handleForgotPassword}
+			  className="text-sm text-gray-500 hover:underline mt-2"
+			>
+			  Forgot Password?
+			</button>
 
           <button
             onClick={handleSignUp}
