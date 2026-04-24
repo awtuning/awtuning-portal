@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../src/lib/supabase";
+import logo from "../logo-black.png";
 
 export default function ResetPasswordPage() {
   const router = useRouter();
@@ -54,7 +55,7 @@ export default function ResetPasswordPage() {
       <div className="bg-white text-black rounded-xl p-8 shadow-xl w-full max-w-md">
         <div className="text-center mb-6">
           <img
-            src="../logo-black.png"
+            src={logo}
             alt="AWTuning"
             className="mx-auto mb-4 max-w-[190px]"
           />
