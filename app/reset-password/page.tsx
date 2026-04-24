@@ -54,7 +54,7 @@ export default function ResetPasswordPage() {
       <div className="bg-white text-black rounded-xl p-8 shadow-xl w-full max-w-md">
         <div className="text-center mb-6">
           <img
-            src="../logo.png"
+            src="../logo-black.png"
             alt="AWTuning"
             className="mx-auto mb-4 max-w-[190px]"
           />
