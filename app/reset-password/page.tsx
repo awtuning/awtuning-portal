@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../src/lib/supabase";
+import Image from "next/image";
 import logo from "../logo-black.png";
 
 export default function ResetPasswordPage() {
@@ -54,11 +55,14 @@ export default function ResetPasswordPage() {
     <main className="min-h-screen bg-black flex items-center justify-center p-6">
       <div className="bg-white text-black rounded-xl p-8 shadow-xl w-full max-w-md">
         <div className="text-center mb-6">
-          <img
-            src={logo}
-            alt="AWTuning"
-            className="mx-auto mb-4 max-w-[190px]"
-          />
+          <Image
+			  src={logo}
+			  alt="AWTuning"
+			  width={190}
+			  height={80}
+			  priority
+			  className="mx-auto mb-4 w-[190px] h-auto"
+			/>
 
           <h1 className="text-2xl font-bold">Reset Password</h1>
 
